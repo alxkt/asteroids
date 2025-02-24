@@ -1,5 +1,6 @@
 import sys
 import pygame
+
 from constants import *
 from player import *
 from asteroidfield import *
@@ -13,7 +14,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    dt = 0 # Delta time for frame rate independence
+    dt = 0  # Delta time for frame rate independence
     clock = pygame.time.Clock()
 
     # Sprite groups for different game objects
@@ -61,11 +62,10 @@ def main():
         for object in drawable:
             object.draw(screen)
 
-        pygame.display.flip() # Update display
+        pygame.display.flip()  # Update display
 
         # Control frame rate
-        dt = clock.tick(60) / 1000 # Convert ms to seconds
-
+        dt = clock.tick(60) / 1000  # Convert ms to seconds
 
 if __name__ == "__main__":
     main()

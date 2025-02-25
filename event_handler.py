@@ -10,7 +10,7 @@ def handle_events(player, dt):
     """
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quite()
+            pygame.quit()
             sys.exit()
         
     keys = pygame.key.get_pressed()
@@ -25,4 +25,18 @@ def handle_events(player, dt):
     if keys[pygame.K_SPACE]:
         player.shoot()
 
-
+def handle_menu_events():
+    """
+    Handle input events for the menu.
+    """
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                return "start"
+            if event.key == pygame.K_ESCAPE:
+                pygame.quite()
+                sys.exit()
+    return None

@@ -6,12 +6,17 @@ from asteroidfield import AsteroidField
 from shot import Shot
 from asteroid import Asteroid
 from event_handler import handle_events
+from menu import main_menu
 
 def main():
     """
     Main function to run the Asteroids game.
     Initializes pygame, sets up the game screen, and runs the game loop.
     """
+
+    # Display the main menu
+    main_menu()
+
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 

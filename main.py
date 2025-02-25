@@ -5,6 +5,7 @@ from player import Player
 from asteroidfield import AsteroidField
 from shot import Shot
 from asteroid import Asteroid
+from event_handler import handle_events
 
 def main():
     """
@@ -36,9 +37,7 @@ def main():
     # Game loop
     while True:
         # Handle events
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                return
+        handle_events(player, dt)
 
         # Update game objects
         for object in updatable:

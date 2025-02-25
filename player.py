@@ -63,18 +63,6 @@ class Player(CircleShape):
             dt (float): Delta time for frame rate independence.
         """
         self.shot_timer -= dt
-        keys = pygame.key.get_pressed()
-
-        if keys[pygame.K_a]:
-            self.rotate(-dt)
-        if keys[pygame.K_d]:
-            self.rotate(dt)
-        if keys[pygame.K_w]:
-            self.move(dt)
-        if keys[pygame.K_s]:
-            self.move(-dt)
-        if keys[pygame.K_SPACE]:
-            self.shoot()
 
     def draw(self, screen):
         """

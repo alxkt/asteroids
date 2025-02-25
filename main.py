@@ -1,10 +1,10 @@
 import sys
 import pygame
-
-from constants import *
-from player import *
-from asteroidfield import *
-from shot import *
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from player import Player
+from asteroidfield import AsteroidField
+from shot import Shot
+from asteroid import Asteroid
 
 def main():
     """

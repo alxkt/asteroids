@@ -3,15 +3,19 @@ import sys
 
 def handle_events(player, dt):
     """
-    Hander user input events.
+    Handle user input events.
+
     Args:
         player (Player): The player object to control.
-        dt (float): Delta time for frame rate independance.
+        dt (float): Delta time for frame rate independence.
     """
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                return "pause"
         
     keys = pygame.key.get_pressed()
     if keys[pygame.K_a]:
@@ -25,9 +29,11 @@ def handle_events(player, dt):
     if keys[pygame.K_SPACE]:
         player.shoot()
 
+    return None
+
 def handle_menu_events():
     """
-    Handle input events for the menu.
+    Handle user input events for the menu.
     """
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -35,8 +41,8 @@ def handle_menu_events():
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                return "start"
+                return "resume"
             if event.key == pygame.K_ESCAPE:
-                pygame.quite()
+                pygame.quit()
                 sys.exit()
     return None

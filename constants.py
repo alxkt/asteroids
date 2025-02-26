@@ -17,3 +17,7 @@ PLAYER_SHOOT_COOLDOWN = 0.3  # seconds
 
 # Shot settings
 SHOT_RADIUS = 5
+
+# Score settings
+SCORE_PER_SECOND = 10
+SCORE_PER_ASTEROID = 100

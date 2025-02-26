@@ -18,8 +18,6 @@ def handle_events(player, dt):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 return "pause"
-            elif event.key == pygame.K_SPACE:
-                player.shoot()
         
     keys = pygame.key.get_pressed()
     if keys[pygame.K_a]:
@@ -30,6 +28,8 @@ def handle_events(player, dt):
         player.move(dt)
     if keys[pygame.K_s]:
         player.move(-dt)
+    if keys[pygame.K_SPACE]:
+        player.shoot()
 
     return None
 

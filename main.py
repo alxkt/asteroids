@@ -19,6 +19,9 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Asteroids")
+    
+    # Create font for score display
+    score_font = pygame.font.Font(None, 36)  # None uses default font, 36 is the size
 
     # Display the main menu
     main_menu()
@@ -122,6 +125,10 @@ def main():
             # Draw game objects
             for game_object in drawable:
                 game_object.draw(screen)
+                
+            # Draw HUD with score
+            score_text = score_font.render(f"Score: {int(score)}", True, "white")
+            screen.blit(score_text, (20, 20))  # Position in top-left corner with padding
 
             pygame.display.flip()  # Update display
 
@@ -130,8 +137,6 @@ def main():
 
         # If we're here, either the player died and chose to restart,
         # or they quit the game (which would have already exited)
-
-        # No need for continue, the loop will naturally restart
 
 if __name__ == "__main__":
     main()

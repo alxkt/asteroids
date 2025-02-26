@@ -71,7 +71,7 @@ class Player(CircleShape):
         Args:
             screen (pygame.Surface): The surface to draw the player on.
         """
-        pygame.draw.polygon(screen, "white", self.triangle(), 2)
+        pygame.draw.polygon(screen, "red", self.triangle())
 
     def shoot(self):
         """

@@ -2,6 +2,8 @@
 
 A classic arcade-style **Asteroids** game built with Pygame.
 
+![Game screenshot](assets/asteroids.gif)
+
 ## Description
 
 Pilot your spaceship through an asteroid field, destroying asteroids while avoiding collisions. Smooth controls, dynamic asteroids, and a scoring system.
